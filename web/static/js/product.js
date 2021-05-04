@@ -9,7 +9,7 @@ var dem = 0;
 // LOAD DỮ LIỆU
 
 function loadData() {
-    
+
     var demCart = 0;
     $('.cart__average').text(demCart);
     // LOAD SÁCH GIẢM GIÁ.
@@ -144,6 +144,17 @@ function loadAll(obj, n) {
                         continue;
                     } else {
                         if (list[i].maloai == "VH_TN") {
+                            let thanhtien = 0;
+                            let giagoc = 0;
+                            if (list[i].giamgia == 0) {
+                                list[i].giamgia = "";
+                                thanhtien = fomatter.format(list[i].giagoc);
+                                giagoc = "";
+                            } else {
+                                thanhtien = fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100);
+                                list[i].giamgia = list[i].giamgia + "%";
+                                giagoc = fomatter.format(list[i].giagoc);
+                            }
                             var el = $(`
                                 <div class="product__woo">
                                     <div class="product__img">
@@ -156,9 +167,9 @@ function loadAll(obj, n) {
                                         <i class="fa fa-shopping-cart" onclick="addCart('${list[i].masp}')" aria-hidden="true"></i>
                                     </div>
                                     <div class="product__price">
-                                        <label>${fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100)}</label>
-                                        <span class="mx-2">${fomatter.format(list[i].giagoc)}</span>
-                                        <span class="mx-2">${list[i].giamgia}%</span>
+                                        <label>${thanhtien}</label>
+                                        <span class="giasp mx-2">${giagoc}</span>
+                                        <span class="giasp mx-2">${list[i].giamgia}</span>
                                     </div>
                                 </div>
                             `);
@@ -169,13 +180,30 @@ function loadAll(obj, n) {
                         }
                     }
                 }
+                let getGiaSP = document.getElementsByClassName("giasp");
+                for (let i = 0; i < getGiaSP.length; i++) {
+                    if (getGiaSP[i].innerHTML == "") {
+                        getGiaSP[i].style.display = "none";
+                    }
+                }
             } else {
                 if (obj == "#SNN") {
                     for (var i = 0; i < list.length; i++) {
                         if (dem == n) {
                             continue;
                         } else {
-                            if (list[i].maloai == "QLKD" || list[i].maloai == "KH_VT") {
+                            if (list[i].maloai == "VH_NN" || list[i].maloai == "KH_VT") {
+                                let thanhtien = 0;
+                                let giagoc = 0;
+                                if (list[i].giamgia == 0) {
+                                    list[i].giamgia = "";
+                                    thanhtien = fomatter.format(list[i].giagoc);
+                                    giagoc = "";
+                                } else {
+                                    thanhtien = fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100);
+                                    list[i].giamgia = list[i].giamgia + "%";
+                                    giagoc = fomatter.format(list[i].giagoc);
+                                }
                                 var el = $(`
                                     <div class="product__woo">
                                         <div class="product__img">
@@ -188,17 +216,24 @@ function loadAll(obj, n) {
                                             <i class="fa fa-shopping-cart" onclick="addCart('${list[i].masp}')" aria-hidden="true"></i>
                                         </div>
                                         <div class="product__price">
-                                            <label>${fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100)}</label>
-                                            <span class="mx-2">${fomatter.format(list[i].giagoc)}</span>
-                                            <span class="mx-2">${list[i].giamgia}%</span>
+                                            <label>${thanhtien}</label>
+                                            <span class="giasp mx-2">${giagoc}</span>
+                                            <span class="giasp mx-2">${list[i].giamgia}</span>
                                         </div>
                                     </div>
                                 `);
                                 $('.all__product').append(el);
                                 $('.all__product').addClass('fadeShow');
+                                let check = document.getElementsByClassName("giasp");
                                 dem++;
                                 total = total + 1;
                             }
+                        }
+                    }
+                    let getGiaSP = document.getElementsByClassName("giasp");
+                    for (let i = 0; i < getGiaSP.length; i++) {
+                        if (getGiaSP[i].innerHTML == "") {
+                            getGiaSP[i].style.display = "none";
                         }
                     }
                 } else {
@@ -208,6 +243,17 @@ function loadAll(obj, n) {
                                 continue;
                             } else {
                                 if (list[i].maloai == "TSHK" || list[i].maloai == "TLH" || list[i].maloai == "TNHI") {
+                                    let thanhtien = 0;
+                                    let giagoc = 0;
+                                    if (list[i].giamgia == 0) {
+                                        list[i].giamgia = "";
+                                        thanhtien = fomatter.format(list[i].giagoc);
+                                        giagoc = "";
+                                    } else {
+                                        thanhtien = fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100);
+                                        list[i].giamgia = list[i].giamgia + "%";
+                                        giagoc = fomatter.format(list[i].giagoc);
+                                    }
                                     var el = $(`
                                         <div class="product__woo">
                                             <div class="product__img">
@@ -220,9 +266,9 @@ function loadAll(obj, n) {
                                                 <i class="fa fa-shopping-cart" onclick="addCart('${list[i].masp}')" aria-hidden="true"></i>
                                             </div>
                                             <div class="product__price">
-                                                <label>${fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100)}</label>
-                                                <span class="mx-2">${fomatter.format(list[i].giagoc)}</span>
-                                                <span class="mx-2">${list[i].giamgia}%</span>
+                                                <label>${thanhtien}</label>
+                                                <span class="giasp mx-2">${giagoc}</span>
+                                                <span class="giasp mx-2">${list[i].giamgia}</span>
                                             </div>
                                         </div>
                                     `);
@@ -231,6 +277,12 @@ function loadAll(obj, n) {
                                     dem++;
                                     total = total + 1;
                                 }
+                            }
+                        }
+                        let getGiaSP = document.getElementsByClassName("giasp");
+                        for (let i = 0; i < getGiaSP.length; i++) {
+                            if (getGiaSP[i].innerHTML == "") {
+                                getGiaSP[i].style.display = "none";
                             }
                         }
                     }
@@ -265,19 +317,19 @@ function loadCategories() {
     }).done(function (response) {
         var title = new Array();
         var list = new Array();
-        $.each(response, function (index, item){
-           title.push(item); 
+        $.each(response, function (index, item) {
+            title.push(item);
         });
         $.ajax({
             url: "ProductServ",
             method: "GET"
         }).done(function (res) {
-            $.each(res, function (index, item){
-               list.push(item); 
+            $.each(res, function (index, item) {
+                list.push(item);
             });
-            for(var i = 0 ; i < title.length ; i ++){
-                for ( var j = 0 ; j < list.length ; j ++){
-                    if(list[j].maloai == title[i].maloai){
+            for (var i = 0; i < title.length; i++) {
+                for (var j = 0; j < list.length; j++) {
+                    if (list[j].maloai == title[i].maloai) {
                         sum = sum + 1;
                     }
                 }
@@ -287,7 +339,7 @@ function loadCategories() {
                 sum = 0;
             }
         });
-    }).fail(function (response){
+    }).fail(function (response) {
         alert("Lỗi dữ liệu !");
     });
 }
@@ -298,7 +350,7 @@ function closeModal() {
     });
 }
 
-function viewMoreIndex(obj,n){
+function viewMoreIndex(obj, n) {
     n = n + 8;
     dem = 0;
     loadAll(obj, n);

@@ -108,6 +108,26 @@
         <servlet-name>PostFeedback</servlet-name>
         <servlet-class>bookshop.controller.Feedback.PostFeedback</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductManager</servlet-name>
+        <servlet-class>bookshop.controller.Admin.ProductManager</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddProduct</servlet-name>
+        <servlet-class>bookshop.controller.Admin.AddProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListProduct</servlet-name>
+        <servlet-class>bookshop.controller.Admin.ListProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteProduct</servlet-name>
+        <servlet-class>bookshop.controller.Admin.DeleteProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AmountType</servlet-name>
+        <servlet-class>bookshop.controller.Admin.AmountType</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServ</servlet-name>
         <url-pattern>/LoginServ</url-pattern>
@@ -215,6 +235,26 @@
     <servlet-mapping>
         <servlet-name>PostFeedback</servlet-name>
         <url-pattern>/PostFeedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductManager</servlet-name>
+        <url-pattern>/ProductManager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddProduct</servlet-name>
+        <url-pattern>/AddProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListProduct</servlet-name>
+        <url-pattern>/ListProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteProduct</servlet-name>
+        <url-pattern>/DeleteProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AmountType</servlet-name>
+        <url-pattern>/AmountType</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

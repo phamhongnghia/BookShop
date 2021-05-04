@@ -157,9 +157,13 @@ body{
 .page__bill_account .start a{
     padding: 5px 15px;
     display: block;
+    color: #ce7852;
+    border: 1px solid #ce7852;
+    margin: 5px;
+}
+.page__bill_account .start .active{
     background: #ce7852;
     color: white;
-    margin: 5px;
 }
 .btn__view{
     background: var(--warning);

@@ -1,13 +1,20 @@
 $(document).ready(function () {
     Effect();
-    if(!document.querySelector('.my__account')){
+    if (!document.querySelector('.my__account')) {
         $('.cart__sum a').css({
-            'cursor' : 'not-allowed',
-            'pointer-events' : 'none'
+            'cursor': 'not-allowed',
+            'pointer-events': 'none'
         });
-    }else{
+    } else {
         $('.cart__sum a').removeAttr('style');
     }
+    document.querySelector(".btn__close__phone").addEventListener("click", function () {
+        $(".popup__contact label").css({
+            "opacity": "0",
+            "visibility": "visible",
+            "transition": ".5s"
+        });
+    });
 });
 function Effect() {
     window.addEventListener("scroll", function () {

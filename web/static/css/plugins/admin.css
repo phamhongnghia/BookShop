@@ -124,6 +124,10 @@ body{
 
 /* Admin product */
 
+.addProduct{
+    font-size: 13px;
+}
+
 .admin__product__title{
     font-size: 20px;
     font-weight: 700;
@@ -136,7 +140,7 @@ body{
 .product__details form select{
     padding: 5px;
     margin: 0 10px;
-    width: 30%;
+    width: 63%;
     font-size: 14px;
 }
 .product__single form label,
@@ -156,8 +160,8 @@ body{
     border-radius: 5px;
     width: 33%;
 }
-.product__single form input[type="submit"],
-.product__details form input[type="submit"]{
+.product__single form input[type="button"],
+.product__details form input[type="button"]{
     padding: 10px;
     width: 15%;
     background: #ce7852;
@@ -226,4 +230,76 @@ body{
     background: red;
     color: white;
     font-size: 13px;
+}
+
+.select__maloai{
+    padding: 5px;
+    margin: 0 10px;
+    width: 50%;
+    font-size: 14px;
+}
+.select__maloai:focus-visible{
+    outline: none;
+}
+/* Pagination*/
+.page__product .start__product,
+.page__bill_account .start__bill,
+.page__account .start__account{
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.page__product .start__product a,
+.page__bill_account .start__bill a,
+.page__account .start__account a{
+    padding: 5px 15px;
+    display: block;
+    color: #ce7852;
+    border: 1px solid #ce7852;
+    margin: 5px;
+}
+.page__product .start__product .active,
+.page__bill_account .start__bill .active,
+.page__account .start__account .active{
+    background: #ce7852;
+    color: white;
+}
+
+/* Dialog delete */
+
+.modal__delete {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #00000094;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.modal__dialog {
+    width: 25%;
+    border-radius: 5px;
+    background: white;
+    padding: 2em;
+    position: relative;
+}
+
+.modal__dialog__close {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.modal__dialog__header h4 {
+    font-size: 18px;
+    text-align: center;
 }

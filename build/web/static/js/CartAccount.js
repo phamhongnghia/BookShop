@@ -176,7 +176,7 @@ function orderCart(tendangnhap){
             $(this).empty();
         });
     });
-    var mes = "Bạn đã đặt hàng thành công ! Mời bạn tiếp tục mua sách !";
+    var mes = "Bạn đã đặt hàng thành công ! Mời bạn tiếp tục !";
     messageCart(mes);
     $('.message').fadeIn('slow/10000', function () {
         $(this).css({
@@ -184,7 +184,7 @@ function orderCart(tendangnhap){
             'visibility': 'visible'
         });
         $(this).find('.message__img').css('color', '#00ff2b');
-    }).delay(5000).fadeOut('slow/10000', function () {
+    }).delay(2000).fadeOut('slow/10000', function () {
         $('.alert__cart').removeAttr('style');
         $(this).remove();
     });

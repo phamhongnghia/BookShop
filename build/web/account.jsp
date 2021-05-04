@@ -107,28 +107,12 @@
                         </div>
                     </div>
                     <div class="account__bill tab py-3" id="account__bill">
-                        <%
-                            int first = 0, last = 0, pages = 1;
-                            if(request.getParameter("pages")!=null){
-                                pages = (int) Integer.parseInt(request.getParameter("pages"));
-                            }
-                            
-                            int total = AccountConn.getCount(tendangnhap);
-                            
-                            if(total <= 4){
-                                first = 0;
-                                last = total;
-                            }else{
-                                first = (pages - 1)*4;
-                                last = 4;
-                            }
-                            
-                            List<OrderProduct> list = AccountConn.getLimit(first, last, tendangnhap);
-//                          List<OrderProduct> list = AccountConn.getOrder(tendangnhap);
+                       <%
+                            List<OrderProduct> list = AccountConn.getOrder(tendangnhap);
                             request.setAttribute("list", list);
                         %>
                         <% if(list.size() > 0){%>
-                        <label><%=total%> hóa đơn</label>
+                        <label>${list.size()} hóa đơn</label>
                         <table>
                             <thead>
                                 <tr>
@@ -160,32 +144,6 @@
                         <%}%>
                         <div  class="page__bill_account">
                             <ul class="start">
-                                <%
-                                    int loop = 0, num = 0;
-                                    if((total / 4)% 2 == 0){
-                                        num = total/4;
-                                    }else{
-                                        num = (total + 1)/4;
-                                    }
-                                    
-                                    if(total %2 != 0){
-                                        loop = (total/4)+1;
-                                    }else{
-                                        if(total < (num*4)+4 && total != num*4){
-                                            loop = (total / 4) + 1;
-                                        }else{
-                                            loop = (total /4);
-                                        }
-                                    }
-                                    for( int i = 1 ; i <= loop ; i++){
-                                        if(pages == i){
-                                    %>
-                                <li><a href="account.jsp?pages=<%=i%>#account__bill"><%=i%></a></li>
-                                    <% }else{%>
-                                <li><a href="account.jsp?pages=<%=i%>#account__bill"><%=i%></a></li>
-                                    <%    }
-                                    }
-                                %>
                             </ul>
                         </div>
                         <div class="account__details__bill py-3" id="account__details__bill">

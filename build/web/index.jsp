@@ -71,7 +71,7 @@
             <div class="menu__product py-3">
                 <ul>
                     <li><a class="active__menu" href="#ALL" onclick="btnProduct(this)">Tất cả</a></li>
-                    <li><a href="#STN" onclick="btnProduct(this)">Sách trong nước</a></li>
+                    <li><a href="#STN" onclick="btnProduct(this)">Sách văn học</a></li>
                     <li><a href="#SNN" onclick="btnProduct(this)">Sách nước ngoài</a></li>
                     <li><a href="#OTHER" onclick="btnProduct(this)">Khác</a></li>
                 </ul>

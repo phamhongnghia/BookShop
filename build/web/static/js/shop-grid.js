@@ -31,7 +31,7 @@ function loadShopGrid(n) {
             method: "GET"
         }).done(function (response) {
             var arr = new Array();
-            $.each(response, function (index, item){
+            $.each(response, function (index, item) {
                 arr.push(item);
             });
             for (var i = 0; i < arr.length; i++) {
@@ -45,7 +45,7 @@ function loadShopGrid(n) {
                         <li class="breadcrumb-item"><a class="text-white" href="index.jsp">Trang chủ</a></li>
                         <li class="breadcrumb-item"><a href="shop-grid.jsp?t=${arr[i].maloai}">${arr[i].tenloai}</a></li>
                     `);
-                     $('.breadcrumb').append(ol);
+                    $('.breadcrumb').append(ol);
                 }
             }
         });
@@ -68,6 +68,17 @@ function loadShopGrid(n) {
                     continue;
                 } else {
                     if (list[i].maloai == "KTE" || list[i].maloai == "TLH") {
+                        let thanhtien = 0;
+                        let giagoc = 0;
+                        if (list[i].giamgia == 0) {
+                            list[i].giamgia = "";
+                            thanhtien = fomatter.format(list[i].giagoc);
+                            giagoc = "";
+                        } else {
+                            thanhtien = fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100);
+                            list[i].giamgia = list[i].giamgia + "%";
+                            giagoc = fomatter.format(list[i].giagoc);
+                        }
                         var el = $(`
                             <div class="product__woo">
                                 <div class="product__img">
@@ -80,9 +91,9 @@ function loadShopGrid(n) {
                                     <i class="fa fa-shopping-cart" onclick="addCart('${list[i].masp}')" aria-hidden="true"></i>
                                 </div>
                                 <div class="product__price">
-                                    <label>${fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100)}</label>
-                                    <span class="mx-2">${fomatter.format(list[i].giagoc)}</span>
-                                    <span class="mx-2">${list[i].giamgia}%</span>
+                                    <label>${thanhtien}</label>
+                                    <span class="giasp mx-2">${giagoc}</span>
+                                    <span class="giasp mx-2">${list[i].giamgia}</span>
                                 </div>
                             </div>
                         `);
@@ -92,14 +103,31 @@ function loadShopGrid(n) {
                     }
                 }
             }
-        }else{
+            let getGiaSP = document.getElementsByClassName("giasp");
+            for (let i = 0; i < getGiaSP.length; i++) {
+                if (getGiaSP[i].innerHTML == "") {
+                    getGiaSP[i].style.display = "none";
+                }
+            }
+        } else {
             dem = 0;
             sum = 0;
-            for( var i = 0 ; i < list.length ; i++){
-                if(dem == n){
+            for (var i = 0; i < list.length; i++) {
+                if (dem == n) {
                     continue;
-                }else{
-                    if(list[i].maloai == url[1]){
+                } else {
+                    if (list[i].maloai == url[1]) {
+                        let thanhtien = 0;
+                        let giagoc = 0;
+                        if (list[i].giamgia == 0) {
+                            list[i].giamgia = "";
+                            thanhtien = fomatter.format(list[i].giagoc);
+                            giagoc = "";
+                        } else {
+                            thanhtien = fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100);
+                            list[i].giamgia = list[i].giamgia + "%";
+                            giagoc = fomatter.format(list[i].giagoc);
+                        }
                         var el = $(`
                             <div class="product__woo">
                                 <div class="product__img">
@@ -112,9 +140,9 @@ function loadShopGrid(n) {
                                     <i class="fa fa-shopping-cart" onclick="addCart('${list[i].masp}')" aria-hidden="true"></i>
                                 </div>
                                 <div class="product__price">
-                                    <label>${fomatter.format(list[i].giagoc - (list[i].giagoc * list[i].giamgia) / 100)}</label>
-                                    <span class="mx-2">${fomatter.format(list[i].giagoc)}</span>
-                                    <span class="mx-2">${list[i].giamgia}%</span>
+                                    <label>${thanhtien}</label>
+                                    <span class="giasp mx-2">${giagoc}</span>
+                                    <span class="giasp mx-2">${list[i].giamgia}</span>
                                 </div>
                             </div>
                         `);
@@ -122,31 +150,37 @@ function loadShopGrid(n) {
                         dem++;
                         sum = sum + 1;
                     }
+                }
+            }
+            let getGiaSP = document.getElementsByClassName("giasp");
+            for (let i = 0; i < getGiaSP.length; i++) {
+                if (getGiaSP[i].innerHTML == "") {
+                    getGiaSP[i].style.display = "none";
                 }
             }
             dem = 0;
         }
         if (n > sum) {
             $('.view__more__shop').empty();
-        }else{
-            if(sum > 0){
+        } else {
+            if (sum > 0) {
                 var view = $(`
                     <button onclick="viewMore(${n})">xem thêm</button>
                 `);
                 $('.view__more__shop').append(view);
-            }else{
+            } else {
                 $('.view__more__shop').text("Xin lỗi ! Không có sản phẩm !");
             }
         }
-        if(sum == 0){
-             $('.view__more__shop').text("Xin lỗi ! Không có sản phẩm !");
+        if (sum == 0) {
+            $('.view__more__shop').text("Xin lỗi ! Không có sản phẩm !");
         }
     }).fail(function (response) {
         alert("Lỗi dữ liệu !");
     });
 }
 
-function viewMore(n){
+function viewMore(n) {
     n = n + 6;
     loadShopGrid(n);
     console.log(n);

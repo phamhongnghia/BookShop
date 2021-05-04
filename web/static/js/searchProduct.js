@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function (){
+$(document).ready(function () {
     var n = 8;
     loadSearch(n);
 });
-function loadSearch(n){
+function loadSearch(n) {
     let dem = 0;
     let sum = 0;
     $('.list__search').empty();
@@ -16,25 +16,36 @@ function loadSearch(n){
     $.ajax({
         url: "ProductServ",
         method: "GET"
-    }).done(function (response){
+    }).done(function (response) {
         let arr = new Array();
         let result = new Array();
-        $.each(response, function (index, item){
-           arr.push(item); 
+        $.each(response, function (index, item) {
+            arr.push(item);
         });
-        for(let i of arr){
-            if(i.tensp.toLowerCase().includes(keyword)){
+        for (let i of arr) {
+            if (i.tensp.toLowerCase().includes(keyword)) {
                 result.push(i);
             }
         }
-        if(keyword == "" || result.length == 0){
+        if (keyword == "" || result.length == 0) {
             document.querySelector('.title__search h5').innerHTML = 'Tìm kiếm sản phẩm !';
             $('.list__search').text("Không thể tìm thấy sản phẩm !");
-        }else{
-            for(let i = 0 ; i < result.length ; i++){
-                if(dem == n){
+        } else {
+            for (let i = 0; i < result.length; i++) {
+                if (dem == n) {
                     continue;
-                }else{
+                } else {
+                    let thanhtien = 0;
+                    let giagoc = 0;
+                    if (result[i].giamgia == 0) {
+                        result[i].giamgia = "";
+                        thanhtien = fomatter.format(result[i].giagoc);
+                        giagoc = "";
+                    } else {
+                        thanhtien = fomatter.format(result[i].giagoc - (result[i].giagoc * result[i].giamgia) / 100);
+                        result[i].giamgia = result[i].giamgia + "%";
+                        giagoc = fomatter.format(result[i].giagoc);
+                    }
                     var el = $(`
                         <div class="product__woo">
                             <div class="product__img">
@@ -47,9 +58,9 @@ function loadSearch(n){
                                 <i class="fa fa-shopping-cart" onclick="addCart('${result[i].masp}')" aria-hidden="true"></i>
                             </div>
                             <div class="product__price">
-                                <label>${fomatter.format(result[i].giagoc - (result[i].giagoc * result[i].giamgia) / 100)}</label>
-                                <span class="mx-2">${fomatter.format(result[i].giagoc)}</span>
-                                <span class="mx-2">${result[i].giamgia}%</span>
+                                <label>${thanhtien}</label>
+                                <span class="giasp mx-2">${giagoc}</span>
+                                <span class="giasp mx-2">${result[i].giamgia}</span>
                             </div>
                         </div>
                     `);
@@ -58,12 +69,18 @@ function loadSearch(n){
                     sum = sum + 1;
                 }
             }
-            document.querySelector('.title__search h5').innerHTML = result.length+' sản phẩm với từ khóa "'+keyword+'" !';
+            let getGiaSP = document.getElementsByClassName("giasp");
+            for (let i = 0; i < getGiaSP.length; i++) {
+                if (getGiaSP[i].innerHTML == "") {
+                    getGiaSP[i].style.display = "none";
+                }
+            }
+            document.querySelector('.title__search h5').innerHTML = result.length + ' sản phẩm với từ khóa "' + keyword + '" !';
         }
         if (n > sum) {
             $('.view__more__shop').empty();
-        }else{
-            if(sum > 0){
+        } else {
+            if (sum > 0) {
                 var view = $(`
                     <button onclick="viewMore(${n})">xem thêm</button>
                 `);
@@ -72,7 +89,7 @@ function loadSearch(n){
         }
     });
 }
-function viewMore(n){
+function viewMore(n) {
     n = n + 8;
     loadSearch(n);
 }

@@ -94,10 +94,26 @@ public class Product {
     public void setGiamgia(int giamgia) {
         this.giamgia = giamgia;
     }
+
+    /**
+     * @return the trangthai
+     */
+    public String getTrangthai() {
+        return trangthai;
+    }
+
+    /**
+     * @param trangthai the trangthai to set
+     */
+    public void setTrangthai(String trangthai) {
+        this.trangthai = trangthai;
+    }
+
     private int masp;
     private String maloai;
     private String tensp;
     private String hinhanh;
     private int giagoc;
     private int giamgia;
+    private String trangthai;
 }

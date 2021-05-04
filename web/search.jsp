@@ -8,12 +8,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="bookshop.model.AddCart.*, bookshop.model.Account.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+    String keyword = request.getParameter("keyword");
+%>
 <!DOCTYPE html>
 <html lang="vi">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Giỏ hàng</title>
+        <title>Tìm kiếm sản phẩm <%=keyword%></title>
         <!-- Favicons -->
         <link rel="shortcut icon" href="static/image/logo/sm_logo/logo.png">
 
@@ -43,9 +46,6 @@
         <script src="static/js/vendor/modernizr-3.5.0.min.js"></script>
     </head>
     <body>
-        <%
-            String keyword = request.getParameter("keyword");
-        %>
         <%@include file="header.jsp" %>
 
         <div class="header__banner bg__3">
@@ -55,9 +55,9 @@
                 </ol>
             </div>
         </div>
-        
+
         <!-- Load Product search -->
-        
+
         <div class="container keyword__product" data-keyword="<%=keyword%>">
             <div class="title__search text-center py-4">
                 <h5></h5>
@@ -81,7 +81,7 @@
 
 
         <%@include file="footer.jsp" %>
-        
+
 
         <!-- JavaScript, Bootstrap 4, slick, data -->
         <script src="static/js/vendor/jquery-3.2.1.min.js"></script>

@@ -22,7 +22,7 @@ function fnSearch(){
             }
         }
         if(keyword == "" || result.length == 0){
-            var el = $(`<label>Không tìm thấy !</label>`);
+            var el = $(`<label>Không tìm thấy sản phẩm !</label>`);
             $('.list__result ul').append(el);
             $('.list__result').removeAttr('style');
         }else{

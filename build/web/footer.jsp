@@ -72,3 +72,8 @@
     </div>
 </div>
 <div class="modal__popup"></div>
+<!-- Contact -->
+<div class="popup__contact">
+    <label>Liên hệ với chúng tôi !<i class="fa fa-times-circle btn__close__phone" aria-hidden="true"></i></label>
+    <a class="btn__phone" href="tel:0356156445"><img src="static/image/icon/phone_calling.gif" alt=""></a>
+</div>

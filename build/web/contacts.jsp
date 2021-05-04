@@ -60,7 +60,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.9577337658225!2d108.80340767641407!3d15.105657989380097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169acd30c665de7%3A0x5e849b2bdaae2815!2zxJDhuqFpIGjhu41jIFBo4bqhbSBWxINuIMSQ4buTbmcgKGPGoSBz4bufIG3hu5tpKQ!5e0!3m2!1svi!2s!4v1611800355176!5m2!1svi!2s" width="0" height="650" frameborder="0" style="border:1px solid black; width: 100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
-        <div class="container">
+        <div class="container pb-3">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="title__custom pb-4">
@@ -77,7 +77,7 @@
                             <label class="pt-3">Nhập phản hồi</label>
                             <textarea name=""></textarea>
 
-                            <input type="submit" value="Đăng ký" name="">
+                            <input type="submit" value="Gửi" name="">
                         </form>
                     </div>
                 </div>

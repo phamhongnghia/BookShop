@@ -70,6 +70,7 @@ html{
     padding: 25px 35px;
     color: white;
     transition: .4s;
+    white-space: nowrap;
 }
 .header__menu>ul>li>a{
     font-size: 13px;
@@ -643,7 +644,7 @@ html{
         z-index: 9999999;
         position: fixed;
         width: fit-content;
-        bottom: 2%;
+        top: 2%;
         right: 1%;
         font-family: 'poppins', sans-serif;
         align-items: center;
@@ -682,3 +683,55 @@ html{
     .title__custom span{
         font-size: 13px;
     }
+}
+.btn__phone {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    color: white;
+    width: 13%;
+}
+
+.btn__phone img {
+    width: 100%;
+}
+
+.popup__contact label {
+    position: fixed;
+    bottom: 20%;
+    right: 2%;
+    padding: 10px;
+    margin: 0;
+    font-size: 13px;
+    background: #ff0066;
+    color: white;
+    border-radius: 19px;
+    font-family: 'poppins', sans-serif;
+}
+
+.popup__contact label::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff0066;
+    right: 45%;
+    bottom: -5px;
+    transform: rotate( 45deg);
+}
+
+.popup__contact label i {
+    position: absolute;
+    top: -7px;
+    color: #ff0000;
+    right: 0px;
+    font-size: 20px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0 2px;
+}

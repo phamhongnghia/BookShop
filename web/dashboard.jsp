@@ -37,7 +37,7 @@
         <script src="static/js/vendor/modernizr-3.5.0.min.js"></script>
     </head>
     <body>
-        
+
         <%
             String tendangnhap = (String) session.getAttribute("tendangnhap");
             String hinhanh = (String) session.getAttribute("hinhanh");
@@ -54,9 +54,6 @@
                     <div class="admin__avt pt-3">
                         <div class="admin__img">
                             <img src="static/image/user/<%=hinhanh%>">
-                        </div>
-                        <div class="admin__text">
-                            <label class="m-0"><i class="fas fa-shield-alt mr-2"></i><%=tendangnhap%></label>
                         </div>
                     </div>
                     <hr>
@@ -114,104 +111,15 @@
                     </div>
                 </div>
                 <div class="admin__item admin__product" id="mn_product">
-                    <div class="add__product pt-3 pb-4">
-                        <label class="py-2 admin__product__title">Thêm mới sản phẩm</label>
-                        <div class="product__single">
-                            <form action="" name="sanpham">
-                                <div class="form-group py-2">
-                                    <label>Mã sản phẩm</label>
-                                    <input type="text" id="masp" name="masp" readonly>
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Mã loại sản phẩm</label>
-                                    <select id="loaisp" name="maloai">
-                                        <option selected>Mời chọn</option>
-                                        <option value="">Văn học</option>
-                                        <option value="">Văn hóa</option>
-                                        <option value="">Hóa học</option>
-                                    </select>
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Tên sản phẩm</label>
-                                    <input class="w-50" type="text" name="tensp">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Hình ảnh sản phẩm</label>
-                                    <input type="file" name="hinhanh">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Giá sản phẩm</label>
-                                    <input type="number" value="0" min="0" name="giagoc">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Giảm giá</label>
-                                    <input type="number" value="0" min="0" name="giamgia">
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Tải sản phẩm">
-                                </div>
-                            </form>
-                        </div>
-                        <label class="py-2 admin__product__title">Chi tiết sản phẩm</label>
-                        <div class="product__details">
-                            <form action="" name="sanpham">
-                                <div class="form-group py-2">
-                                    <label>Mã sản phẩm</label>
-                                    <input type="text" id="ct_masp" name="masp" readonly>
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Mã nhà cung cấp</label>
-                                    <select id="nhacc" name="manhacc">
-                                        <option selected>Mời chọn</option>
-                                        <option value="">Tuổi trẻ</option>
-                                        <option value="">Tuổi trẻ</option>
-                                        <option value="">Tuổi trẻ</option>
-                                    </select>
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Mã nhà xuất bản</label>
-                                    <select id="nhaxb" name="manhaxb">
-                                        <option selected>Mời chọn</option>
-                                        <option value="">Tuổi trẻ</option>
-                                        <option value="">Tuổi trẻ</option>
-                                        <option value="">Tuổi trẻ</option>
-                                    </select>
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Tác giả</label>
-                                    <input type="text" name="tacgia">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Hình thức</label>
-                                    <input type="text" name="hinhthuc">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Người dịch</label>
-                                    <input type="text" name="nguoidich">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Năm xuất bản</label>
-                                    <input type="text" name="namxb">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Trọng lượng</label>
-                                    <input type="number" value="0" min="0" name="trongluong">
-                                </div>
-                                <div class="form-group py-2">
-                                    <label>Số trang</label>
-                                    <input type="number" value="0" min="0" name="sotrang">
-                                </div>
-                                <div class="form-group py-2 d-flex">
-                                    <label>Nội dung giới thiệu</label>
-                                    <textarea class="w-50" name="noidung"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Thêm chi tiết">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                     <label class="py-2 admin__product__title">Danh sách sản phẩm</label>
+                    <div class="py-3">
+                        <a class="btn btn-success addProduct rounded-0" href="addproduct.html?">Thêm mới</a>
+                    </div>
+                    <div class="form-group py-2">
+                        <label>Mã loại sản phẩm</label>
+                        <select class="select__maloai" id="maloai" name="maloai">
+                        </select>
+                    </div>
                     <div class="list__product">
                         <table>
                             <thead>
@@ -224,26 +132,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>No.00001</td>
-                                    <td>Thuật Đắc Nhân Tâm Nâng Tầm Hiệu Suất</td>
-                                    <td>59.500 ₫</td>
-                                    <td>50%</td>
-                                    <td class="text-center"><a class="btn btn__view" href="#">Chi tiết</a></td>
-                                    <td class="text-center"><a class="btn btn__edit" href="#">Sửa</a></td>
-                                    <td class="text-center"><a class="btn btn__delete" href="">Xóa</a></td>
-                                </tr>
-                                <tr>
-                                    <td>No.00001</td>
-                                    <td>Thuật Đắc Nhân Tâm Nâng Tầm Hiệu Suất</td>
-                                    <td>59.500 ₫</td>
-                                    <td>50%</td>
-                                    <td class="text-center"><a class="btn btn__view" href="#">Chi tiết</a></td>
-                                    <td class="text-center"><a class="btn btn__edit" href="#">Sửa</a></td>
-                                    <td class="text-center"><a class="btn btn__delete" href="">Xóa</a></td>
-                                </tr>
+
                             </tbody>
                         </table>
+                        <div  class="page__product">
+
+                        </div>
                     </div>
                 </div>
                 <div class="admin__item admin__bill" id="mn_bill">
@@ -262,9 +156,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
+                        <div  class="page__bill_account">
+
+                        </div>
                     </div>
                 </div>
                 <div class="admin__item admin__user" id="mn_user">
@@ -283,12 +180,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
+                        <div  class="page__account">
+
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Dialog delete -->
+        <div class="container">
+            <button class="btn btn-danger btn-click rounded-0">Xóa</button>
+        </div>
+
+        <div class="modal__delete">
         </div>
 
 
