@@ -686,28 +686,28 @@ html{
 }
 .btn__phone {
     position: fixed;
-    bottom: 0;
-    right: 10px;
+    bottom: 5%;
+    right: 5%;
     display: block;
-    padding: 10px 15px;
-    font-size: 20px;
+    padding: 10px 19px;
+    font-size: 25px;
     border-radius: 50%;
+    background: #ce7852;
     color: white;
-    width: 13%;
 }
 
-.btn__phone img {
-    width: 100%;
+.btn__phone:hover {
+    color: white;
 }
 
 .popup__contact label {
     position: fixed;
-    bottom: 20%;
-    right: 2%;
+    bottom: 16%;
+    right: 20px;
     padding: 10px;
     margin: 0;
     font-size: 13px;
-    background: #ff0066;
+    background: #ce7852;
     color: white;
     border-radius: 19px;
     font-family: 'poppins', sans-serif;
@@ -718,7 +718,7 @@ html{
     position: absolute;
     width: 10px;
     height: 10px;
-    background: #ff0066;
+    background: #ce7852;
     right: 45%;
     bottom: -5px;
     transform: rotate( 45deg);
@@ -733,5 +733,5 @@ html{
     background: white;
     border-radius: 50%;
     cursor: pointer;
-    padding: 0 2px;
+    padding: 0px 1px;
 }

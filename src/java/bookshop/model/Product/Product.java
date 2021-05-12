@@ -12,6 +12,20 @@ package bookshop.model.Product;
 public class Product {
 
     /**
+     * @return the dem
+     */
+    public int getDem() {
+        return dem;
+    }
+
+    /**
+     * @param dem the dem to set
+     */
+    public void setDem(int dem) {
+        this.dem = dem;
+    }
+
+    /**
      * @return the masp
      */
     public int getMasp() {
@@ -109,7 +123,7 @@ public class Product {
         this.trangthai = trangthai;
     }
 
-    private int masp;
+    private int masp, dem;
     private String maloai;
     private String tensp;
     private String hinhanh;

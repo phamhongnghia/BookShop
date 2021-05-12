@@ -62,7 +62,16 @@
         <!-- register email for web -->
         <%@include file="registerEmail.jsp" %>
         
-
+        <!-- Selling product -->
+        <div class="container py-4">
+            <div class="title__wn sale_pr text-center pb-3">
+                <h4>Sản phẩm <span>bán chạy</span></h4>
+                <p>Các sản phẩm được độc giả quan tâm nhiều nhất</p>
+            </div>
+            <div class="selling__product py-4"></div>
+        </div>
+        
+        <!-- All product -->
         <div class="container py-4">
             <div class="title__wn sale_pr text-center pb-3">
                 <h4>Tất cả <span>Sản phẩm</span></h4>

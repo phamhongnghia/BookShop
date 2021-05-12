@@ -1,7 +1,9 @@
 .list__sale,
 .all__product,
 .grid__product,
-.list__search{
+.list__search,
+.selling__product,
+.ads__selling{
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,5 +1,6 @@
 $(document).ready(function () {
     loadData();
+    sellingProduct();
 });
 
 // BIẾN KHỞI TẠO.
@@ -304,6 +305,87 @@ function loadAll(obj, n) {
     });
     dem = 0;
 }
+
+// Selling product
+function sellingProduct() {
+    $('.ads__selling').empty();
+    $('.selling__product').empty();
+    $.ajax({
+        url: "SellingProduct",
+        method: "GET"
+    }).done(function (response) {
+        let arr = [];
+        $.each(response, function (index, item) {
+            arr.push(item);
+        });
+        arr.sort(function (a, b) {
+            return b.dem - a.dem;
+        });
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[j].masp === arr[i].masp) {
+                    arr.splice(j, 1);
+                }
+            }
+        }
+        let dem = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (dem == 8) {
+                break;
+            } else {
+                let thanhtien = 0;
+                let giagoc = 0;
+                if (arr[i].giamgia == 0) {
+                    arr[i].giamgia = "";
+                    thanhtien = fomatter.format(arr[i].giagoc);
+                    giagoc = "";
+                } else {
+                    thanhtien = fomatter.format(arr[i].giagoc - (arr[i].giagoc * arr[i].giamgia) / 100);
+                    arr[i].giamgia = arr[i].giamgia + "%";
+                    giagoc = fomatter.format(arr[i].giagoc);
+                }
+                var el = $(`
+                        <div class="product__woo">
+                            <div class="product__img">
+                                <img src="static/image/product/big_img/${arr[i].hinhanh}" alt="">
+                            </div>
+                            <div class="product__text pt-2 text-center">
+                                <a href="single-product.jsp?masp=${arr[i].masp}">${arr[i].tensp}</a>
+                            </div>
+                            <div class="product__cart">
+                                <i class="fa fa-shopping-cart" onclick="addCart('${arr[i].masp}')" aria-hidden="true"></i>
+                            </div>
+                            <div class="product__price">
+                                <label>${thanhtien}</label>
+                                <span class="giasp mx-2">${giagoc}</span>
+                                <span class="giasp mx-2">${arr[i].giamgia}</span>
+                            </div>
+                        </div>
+                `);
+                $('.selling__product').append(el);
+                $('.ads__selling').append(el);
+                dem++;
+            }
+        }
+        let getGiaSP = document.getElementsByClassName("giasp");
+        for (let i = 0; i < getGiaSP.length; i++) {
+            if (getGiaSP[i].innerHTML == "") {
+                getGiaSP[i].style.display = "none";
+            }
+        }
+        $('.selling__product').slick({
+            slidesToShow: 4,
+            infinite: false
+        });
+        $('.ads__selling').slick({
+            slidesToShow: 1,
+            infinite: false
+        });
+    }).fail(function (response) {
+        console.log(response);
+    });
+}
+
 function btnProduct(obj) {
     var url = $(obj).attr('href');
     dem = 0;

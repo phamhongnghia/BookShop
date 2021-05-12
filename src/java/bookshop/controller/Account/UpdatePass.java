@@ -38,11 +38,14 @@ public class UpdatePass extends HttpServlet {
         String matkhau = request.getParameter("matkhaucumoi");
         String matkhaucu = request.getParameter("matkhaucu");
         
+        String getNewPass = getMD5.passMd5(matkhau);
+        String getOldPass = getMD5.passMd5(matkhaucu);
+        
         Account acc = new Account();
         
         acc.setTendangnhap(tendangnhap);
-        acc.setMatkhau(matkhau);
-        acc.setMatkhaucu(matkhaucu);
+        acc.setMatkhau(getNewPass);
+        acc.setMatkhaucu(getOldPass);
         
         int status = AccountConn.updatePass(acc);
         

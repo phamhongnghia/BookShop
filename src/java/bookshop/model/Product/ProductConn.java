@@ -102,7 +102,30 @@ public class ProductConn {
         }
         return ls;
     }
-
+    
+    // Get product flow masp
+    public static Product getProduct(int masp){
+        Product pr = new Product();
+        try {
+            Connection conn = getConnection();
+            PreparedStatement ps = conn.prepareStatement("select * from sanpham where masp = ?");
+            ps.setInt(1, masp);
+            
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                pr.setMasp(masp);
+                pr.setTensp(rs.getString("tensp"));
+                pr.setGiagoc(rs.getInt("giagoc"));
+                pr.setGiamgia(rs.getInt("giamgia"));
+                pr.setHinhanh(rs.getString("hinhanh"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return pr;
+    }
+    
+    
     // Get count product
     public static int getCountProduct() {
         int count = 0;

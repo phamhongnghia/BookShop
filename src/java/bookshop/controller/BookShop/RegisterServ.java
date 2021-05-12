@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import bookshop.model.Account.Account;
 import bookshop.model.Account.AccountConn;
+import bookshop.model.Account.getMD5;
 
 /**
  *
@@ -34,6 +35,7 @@ public class RegisterServ extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         try {
@@ -44,10 +46,12 @@ public class RegisterServ extends HttpServlet {
             String email = request.getParameter("email");
             String sodienthoai = request.getParameter("sodienthoai");
             String diachi = request.getParameter("diachi");
-
+            
+            String getPass = getMD5.passMd5(matkhau);
+            
             Account acc = new Account();
             acc.setTendangnhap(tendangnhap);
-            acc.setMatkhau(matkhau);
+            acc.setMatkhau(getPass);
             acc.setHoten(hoten);
             acc.setEmail(email);
             acc.setSodienthoai(sodienthoai);

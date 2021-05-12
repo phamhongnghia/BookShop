@@ -9,6 +9,7 @@
 <%@page import="bookshop.model.AddCart.*, bookshop.model.Account.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
+    request.setCharacterEncoding("UTF-8");
     String keyword = request.getParameter("keyword");
 %>
 <!DOCTYPE html>

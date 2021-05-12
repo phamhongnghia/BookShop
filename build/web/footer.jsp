@@ -10,7 +10,7 @@
         <div class="col-sm-6">
             <div class="footer__logo">
                 <h5>Book<span>Shop</span></h5>
-                <p>Một sản phẩm được thực hiện bởi nhóm 5, sản phẩm là một website bán sách online, giao diện được thiết kế phù hợp với mọi người.</p>
+                <p>Một sản phẩm được thực hiện bởi nhóm 5, sản phẩm là một website bán sách online.</p>
             </div>
             <div class="footer__address">
                 <div class="pt-3">
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="container pt-3 pb-2 footer__copyright text-center">
-        <span>@Copyright. Pham Hong Nghia 2021</span>
+        <span>@Copyright. Team 6 Internship Project 2021</span>
     </div>
 </footer>
 
@@ -59,7 +59,7 @@
         <div class="input-group">
             <input autocomplete="off" class="form-control" type="text" placeholder="Tìm kiếm..." onkeyup="fnSearch()" name="keyword">
             <div class="input-group-append">
-                <button class="btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button class="btn" onclick="btnSearch(document.getElementsByName('keyword').value)"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
         </div>
     </form>
@@ -75,5 +75,5 @@
 <!-- Contact -->
 <div class="popup__contact">
     <label>Liên hệ với chúng tôi !<i class="fa fa-times-circle btn__close__phone" aria-hidden="true"></i></label>
-    <a class="btn__phone" href="tel:0356156445"><img src="static/image/icon/phone_calling.gif" alt=""></a>
+    <a class="btn__phone" href="tel:0356156445"><i class="fa fa-phone" aria-hidden="true"></i></a>
 </div>

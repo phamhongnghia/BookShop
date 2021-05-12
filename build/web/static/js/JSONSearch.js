@@ -46,3 +46,6 @@ function fnSearch(){
         }
     });
 }
+function btnSearch(obj){
+    location.href = "http://localhost:8080/BookShop/search.jsp?keywork="+obj;
+}

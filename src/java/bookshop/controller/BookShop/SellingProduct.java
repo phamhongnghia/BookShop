@@ -5,23 +5,25 @@
  */
 package bookshop.controller.BookShop;
 
+import bookshop.model.Account.AdminConn;
+import bookshop.model.OrderProduct.OrderProduct;
+import bookshop.model.Product.Product;
+import bookshop.model.Product.ProductConn;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import bookshop.model.Account.Account;
-import bookshop.model.Account.AccountConn;
-import bookshop.model.Account.getMD5;
 
 /**
  *
  * @author Pham Hong Nghia
  */
-public class LoginServ extends HttpServlet {
+public class SellingProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,52 +37,33 @@ public class LoginServ extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            String tendangnhap = request.getParameter("tendangnhap");
-            String matkhau = request.getParameter("matkhau");
-            
-            String getPass = getMD5.passMd5(matkhau);
-
-            boolean isValid = AccountConn.checkLogin(tendangnhap, getPass);
-            
-            HttpSession session = request.getSession();
-
-            if (isValid) {
-                
-                Account acc = AccountConn.getAccount(tendangnhap, getPass);
-                
-                if(acc.getQuyentruycap().equals("admin")){
-                    session.setAttribute("tendangnhap", acc.getTendangnhap());
-                    session.setAttribute("matkhau", acc.getMatkhau());
-                    session.setAttribute("hinhanh", acc.getHinhanh());
-                    session.setAttribute("quyentruycap", acc.getQuyentruycap());
-                    
-                    RequestDispatcher ds = getServletContext().getRequestDispatcher("/dashboard.jsp");
-                    ds.forward(request, response);
-                }else {
-                    if (acc.getQuyentruycap().equals("member")) {
-                        session.setAttribute("tendangnhap", acc.getTendangnhap());
-                        session.setAttribute("matkhau", acc.getMatkhau());
-                        session.setAttribute("hoten", acc.getHoten());
-                        session.setAttribute("sodienthoai", acc.getSodienthoai());
-                        session.setAttribute("hinhanh", acc.getHinhanh());
-                        session.setAttribute("diachi", acc.getDiachi());
-
-                        session.setAttribute("error", "true");
-                        response.sendRedirect("");
-//                        RequestDispatcher ds = getServletContext().getRequestDispatcher("/index.jsp");
-//                        ds.forward(request, response);
-                    }
+        List<OrderProduct> list = AdminConn.getAllBill();
+        List<Product> arr = new ArrayList<Product>();
+        int dem = 1;
+        for(int i = 0 ; i < list.size() ; i++){
+            for(int j = i + 1 ; j < list.size() ; j++){
+                if(list.get(j).getMasp() == list.get(i).getMasp()){
+                    dem = dem + 1;
                 }
-            } else {
-                session.setAttribute("error", "false");
-                response.sendRedirect("register.jsp");
             }
-        } finally {
-            out.close();
+            Product pr = ProductConn.getProduct(list.get(i).getMasp());
+            pr.setDem(dem);
+            arr.add(pr);
+            dem = 1;
         }
+        
+        for(int i = 0 ; i < arr.size() ; i ++){
+            for(int j = i + 1 ; j < arr.size() ; j ++){
+                if(arr.get(j).getMasp() == arr.get(i).getMasp()){
+                    arr.remove(j);
+                }
+            }
+        }
+        String getSell = new Gson().toJson(arr);
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.write(getSell);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
