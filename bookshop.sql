@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 04, 2021 lúc 03:28 PM
+-- Thời gian đã tạo: Th5 12, 2021 lúc 03:41 AM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
 -- Phiên bản PHP: 8.0.2
 
@@ -134,7 +134,8 @@ CREATE TABLE `dangkyemail` (
 
 INSERT INTO `dangkyemail` (`id`, `email`) VALUES
 (1, 'phamhongnghia@gmail.com'),
-(2, 'hongnghia@gmail.com');
+(2, 'hongnghia@gmail.com'),
+(3, 'quynguyen@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -175,7 +176,17 @@ INSERT INTO `donhang` (`mahd`, `tendangnhap`, `masp`, `hoten`, `sodienthoai`, `d
 (41, 'phamduong', 66, 'Phạm Dương', '', 'TP.Quảng Ngãi - Quảng Ngãi', 'Bấm Kim Số 10 CL-ST200 + Kim Bấm - Màu Đỏ', '2021-05-02', 'Đã xử lý', 24500, 0, 10, 245000),
 (42, 'phamhongnghia', 49, 'Phạm Hồng Nghĩa', '0356156445', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', 'Hack Não 1500 (Tái bản)', '2021-05-04', 'Đã xử lý', 495000, 13, 2, 861300),
 (43, 'phamhongnghia', 48, 'Phạm Hồng Nghĩa', '0356156445', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', 'Cụm Động Từ Tiếng Anh Thông Dụng (Tái Bản 2021)', '2021-05-04', 'Đã xử lý', 130000, 18, 2, 213200),
-(44, 'phamhongnghia', 45, 'Phạm Hồng Nghĩa', '0356156445', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', 'Tự Học 2000 Từ Vựng Tiếng Anh Theo Chủ Đề (Tái Bản)', '2021-05-04', 'Đã xử lý', 65000, 20, 3, 156000);
+(44, 'phamhongnghia', 45, 'Phạm Hồng Nghĩa', '0356156445', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', 'Tự Học 2000 Từ Vựng Tiếng Anh Theo Chủ Đề (Tái Bản)', '2021-05-04', 'Đã xử lý', 65000, 20, 3, 156000),
+(45, 'phamhongnghia', 4, 'Phạm Hồng Nghĩa', '', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', 'Điệp Viên Hoàn Hảo X6 (Tái Bản 2019)', '2021-05-04', 'Đã xử lý', 168000, 20, 4, 537600),
+(46, 'phamhongnghia', 45, 'Phạm Hồng Nghĩa', '0356156445', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', 'Tự Học 2000 Từ Vựng Tiếng Anh Theo Chủ Đề (Tái Bản)', '2021-05-04', 'Đã xử lý', 65000, 20, 2, 104000),
+(47, 'phamhongnghia', 4, 'Phạm Hồng Nghĩa', '0356156445', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', 'Điệp Viên Hoàn Hảo X6 (Tái Bản 2019)', '2021-05-04', 'Đã xử lý', 168000, 20, 2, 268800),
+(48, 'quynguyen', 45, 'Quy Nguyen', '0356156445', 'TP.Quang Ngai - Quang Ngai', 'Tự Học 2000 Từ Vựng Tiếng Anh Theo Chủ Đề (Tái Bản)', '2021-05-09', 'Đã xử lý', 65000, 20, 10, 520000),
+(49, 'quynguyen', 4, 'Quy Nguyen', '0356156445', 'TP.Quang Ngai - Quang Ngai', 'Điệp Viên Hoàn Hảo X6 (Tái Bản 2019)', '2021-05-09', 'Đã xử lý', 168000, 20, 2, 268800),
+(50, 'quynguyen', 64, 'Quy Nguyen', '0356156445', 'TP.Quang Ngai - Quang Ngai', '451 độ F', '2021-05-09', 'Đã xử lý', 99000, 15, 4, 336600),
+(51, 'giavinh99', 4, 'Gia Vinh', '0356156445', 'Ly Son - Quang Ngai', 'Điệp Viên Hoàn Hảo X6 (Tái Bản 2019)', '2021-05-09', 'Đã xử lý', 168000, 20, 3, 403200),
+(52, 'giavinh99', 45, 'Gia Vinh', '0356156445', 'Ly Son - Quang Ngai', 'Tự Học 2000 Từ Vựng Tiếng Anh Theo Chủ Đề (Tái Bản)', '2021-05-09', 'Đã xử lý', 65000, 20, 1, 52000),
+(53, 'giavinh99', 45, 'Gia Vinh', '0356156445', 'Ly Son - Quang Ngai', 'Tự Học 2000 Từ Vựng Tiếng Anh Theo Chủ Đề (Tái Bản)', '2021-05-09', 'Đã xử lý', 65000, 20, 1, 52000),
+(54, 'giavinh99', 4, 'Gia Vinh', '0356156445', 'Ly Son - Quang Ngai', 'Điệp Viên Hoàn Hảo X6 (Tái Bản 2019)', '2021-05-09', 'Đã xử lý', 168000, 20, 1, 134400);
 
 -- --------------------------------------------------------
 
@@ -198,15 +209,16 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id`, `tendangnhap`, `masp`, `hoten`, `hinhanh`, `noidung`, `ngaydang`) VALUES
-(1, 'phamhongnghia', 3, 'Phạm Hồng Nghĩa', '512x512bb.jpg', 'Sách hay và ý nghĩa', '2021-04-03 21:41:44'),
-(2, 'phamhongnghia', 3, 'Phạm Hồng Nghĩa', '512x512bb.jpg', 'Sách khá ok !!!', '2021-04-03 21:47:30'),
-(3, 'phamhongnghia', 24, 'Phạm Hồng Nghĩa', '512x512bb.jpg', 'Game ez !', '2021-04-21 22:54:00'),
+(1, 'phamhongnghia', 3, 'Phạm Hồng Nghĩa', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'Sách hay và ý nghĩa', '2021-04-03 21:41:44'),
+(2, 'phamhongnghia', 3, 'Phạm Hồng Nghĩa', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'Sách khá ok !!!', '2021-04-03 21:47:30'),
+(3, 'phamhongnghia', 24, 'Phạm Hồng Nghĩa', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'Game ez !', '2021-04-21 22:54:00'),
 (4, 'phamduong', 44, 'Phạm Dương', 'Toni Kroos_ Marco Reus _ Borussia Dortmund.jpg', 'I love English', '2021-04-25 21:34:21'),
-(5, 'phamhongnghia', 47, 'Phạm Hồng Nghĩa', '512x512bb.jpg', 'Nghĩa đẹp trai vl !', '2021-04-27 09:41:25'),
+(5, 'phamhongnghia', 47, 'Phạm Hồng Nghĩa', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'Nghĩa đẹp trai vl !', '2021-04-27 09:41:25'),
 (6, 'phamduong', 47, 'Phạm Dương', 'Toni Kroos_ Marco Reus _ Borussia Dortmund.jpg', 'Ok luôn !', '2021-04-27 09:42:14'),
 (7, 'phamduong', 4, 'Phạm Dương', 'Toni Kroos_ Marco Reus _ Borussia Dortmund.jpg', '1 điệp viên cực kỳ tuyệt vời, người đã hy sinh thầm lặng kiên cường mạnh mẽ bền bỉ dẫu luôn đối mặt với những căn thẳng tưởng chừng có thể quật ngã cùng bao biến cố lịch sử đất nước, và cuối cùng thật hạnh phúc khi bác Ẩn có được những ngày tháng cuối đời thanh thản.', '2021-05-01 20:32:29'),
-(8, 'phamhongnghia', 4, 'Phạm Hồng Nghĩa', '512x512bb.jpg', 'Phạm Xuân Ẩn - một vĩ nhân, một anh hùng dân tộc. Công lao của ông thật to lớn không gì có thể đong đếm được đối với sự nghiệp giải phóng dân tộc thống nhất đất nước ta. Cuốn sách này cuốn hút người đọc từ đầu đến cuối. Ở đó không chỉ cho ta biết về những việc ông đã làm, đã phải trải qua. Ở đó còn có rất nhiều bài học làm người cho chúng ta học hỏi.', '2021-05-01 20:32:50'),
-(9, 'quynguyen', 4, 'Quy Nguyen', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'Phạm Xuân Ẩn - một vĩ nhân, một anh hùng dân tộc. Công lao của ông thật to lớn không gì có thể đong đếm được đối với sự nghiệp giải phóng dân tộc thống nhất đất nước ta. Cuốn sách này cuốn hút người đọc từ đầu đến cuối. Ở đó không chỉ cho ta biết về những việc ông đã làm, đã phải trải qua. Ở đó còn có rất nhiều bài học làm người cho chúng ta học hỏi.', '2021-05-01 20:34:09');
+(8, 'phamhongnghia', 4, 'Phạm Hồng Nghĩa', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'Phạm Xuân Ẩn - một vĩ nhân, một anh hùng dân tộc. Công lao của ông thật to lớn không gì có thể đong đếm được đối với sự nghiệp giải phóng dân tộc thống nhất đất nước ta. Cuốn sách này cuốn hút người đọc từ đầu đến cuối. Ở đó không chỉ cho ta biết về những việc ông đã làm, đã phải trải qua. Ở đó còn có rất nhiều bài học làm người cho chúng ta học hỏi.', '2021-05-01 20:32:50'),
+(9, 'quynguyen', 4, 'Quy Nguyen', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'Phạm Xuân Ẩn - một vĩ nhân, một anh hùng dân tộc. Công lao của ông thật to lớn không gì có thể đong đếm được đối với sự nghiệp giải phóng dân tộc thống nhất đất nước ta. Cuốn sách này cuốn hút người đọc từ đầu đến cuối. Ở đó không chỉ cho ta biết về những việc ông đã làm, đã phải trải qua. Ở đó còn có rất nhiều bài học làm người cho chúng ta học hỏi.', '2021-05-01 20:34:09'),
+(10, 'phamhongnghia', 4, 'Phạm Hồng Nghĩa', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'abc', '2021-05-04 20:35:51');
 
 -- --------------------------------------------------------
 
@@ -267,15 +279,11 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`tendangnhap`, `matkhau`, `hoten`, `email`, `sodienthoai`, `diachi`, `hinhanh`, `quyentruycap`) VALUES
-('admin', '123', 'Admin', 'admin@gmail.com', '0356156443', 'Quang Ngai', 'account.png', 'member'),
-('admin1', '123', 'Admin', 'bookshop@gmail.com', '0356156445', 'Quảng Ngãi', 'account.png', 'admin'),
-('giavinh99', '123', 'Gia Vinh', 'giavinh@gmail.com', '0356278392', 'Ly Son - Quang Ngai', 'account.png', 'member'),
-('hongnghiapham', '123456', 'Pham Hong Nghia', 'phamhongnghia@gmail.com', '0356156445', 'Duc Thanh - Mo Duc - Quang Ngai', 'account.png', 'member'),
-('pduong', '12345', 'Pham Duong', 'phamhongnghia@gmail.com', '0356156443', 'Thanh Pho Quang Ngai - Quang Ngai', 'account.png', 'member'),
-('phamduong', '123456', 'Phạm Dương', 'pduong17@pdu.edu.vn', '0345157823', 'TP.Quảng Ngãi - Quảng Ngãi', 'Toni Kroos_ Marco Reus _ Borussia Dortmund.jpg', 'member'),
-('phamhongnghia', '123', 'Phạm Hồng Nghĩa', 'phamhongnghia@gmail.com', '0356156434', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', '512x512bb.jpg', 'member'),
-('quynguyen', '123', 'Quy Nguyen', 'quynguyen@gmail.com', '0236782671', 'TP.Quang Ngai - Quang Ngai', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'member'),
-('visithvongsavath', '123', 'Vongsavath Visith', 'visith97@gmail.com', '0288937467', 'TP Quang Ngai - Quang Ngai', 'account.png', 'member');
+('admin1', '827ccb0eea8a706c4c34a16891f84e7b', 'Admin', 'bookshop@gmail.com', '0356156445', 'Quảng Ngãi', 'account.png', 'admin'),
+('giavinh99', '827ccb0eea8a706c4c34a16891f84e7b', 'Gia Vinh', 'giavinh@gmail.com', '0356278392', 'Lý Sơn - Quảng Ngãi', 'account.png', 'member'),
+('phamduong', '827ccb0eea8a706c4c34a16891f84e7b', 'Phạm Dương', 'pduong17@pdu.edu.vn', '0345157823', 'TP.Quảng Ngãi - Quảng Ngãi', 'Toni Kroos_ Marco Reus _ Borussia Dortmund.jpg', 'member'),
+('phamhongnghia', '202cb962ac59075b964b07152d234b70', 'Phạm Hồng Nghĩa', 'phamhongnghia@gmail.com', '0356156434', 'Đức Thạnh - Mộ Đức - Quảng Ngãi', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'member'),
+('quynguyen', '827ccb0eea8a706c4c34a16891f84e7b', 'Quý Nguyễn', 'quynguyen@gmail.com', '0236782671', 'TP.Quảng Ngãi - Quảng Ngãi', '65db6014734dfcb9c1fa2229147fdba1.jpg', 'member');
 
 -- --------------------------------------------------------
 
@@ -333,7 +341,7 @@ INSERT INTO `sanpham` (`masp`, `maloai`, `tensp`, `hinhanh`, `giagoc`, `giamgia`
 (5, 'TSHK', 'Homo Deus - Lược Sử Tương Lai', 'homes_dues.jpg', 189000, 17),
 (6, 'TSHK', 'Nhật Ký Đặng Thùy Trâm (Tái Bản 2018)', 'dangthuytram.jpg', 76000, 20),
 (7, 'TSHK', 'Nhật Ký Phi Công Tiêm Kích', 'phicongtiemkich.jpg', 150000, 15),
-(8, 'TSHK', 'Bị Theo Dõi - Bí Mật An Ninh Mạng', 'bitheodoi.jpg', 378000, 20),
+(8, 'TSHK', 'Bị Theo Dõi - Bí Mật An Ninh Mạng', 'bitheodoi.jpg', 378000, 60),
 (9, 'TSHK', 'Con Về', 'conve.jpg', 59000, 20),
 (10, 'VH_TN', 'Từ Điển Tiếng “Em”', 'VH_tudientiengem.jpg', 69000, 20),
 (11, 'VH_TN', 'Con Chim Xanh Biếc Bay Về - Tặng Kèm 6 Postcard', 'VH_conchimxanhbietbayve.jpg', 15000, 25),
@@ -473,25 +481,25 @@ ALTER TABLE `chitietsanpham`
 -- AUTO_INCREMENT cho bảng `dangkyemail`
 --
 ALTER TABLE `dangkyemail`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `mahd` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `mahd` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT cho bảng `hinhanhsanpham`
