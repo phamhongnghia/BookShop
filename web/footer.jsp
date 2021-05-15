@@ -10,7 +10,7 @@
         <div class="col-sm-6">
             <div class="footer__logo">
                 <h5>Book<span>Shop</span></h5>
-                <p>Một sản phẩm được thực hiện bởi nhóm 5, sản phẩm là một website bán sách online.</p>
+                <p>Một sản phẩm được thực hiện bởi nhóm 4, sản phẩm là một website bán sách online.</p>
             </div>
             <div class="footer__address">
                 <div class="pt-3">
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="container pt-3 pb-2 footer__copyright text-center">
-        <span>@Copyright. Team 6 Internship Project 2021</span>
+        <span>@Copyright. Team 4 Internship Project 2021</span>
     </div>
 </footer>
 

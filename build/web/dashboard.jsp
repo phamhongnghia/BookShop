@@ -92,7 +92,7 @@
                         </ul>
                     </div>
                     <div class="copyright">
-                        <label>Copyright @2021. Team 6 Internship Project</label>
+                        <label>Copyright @2021. Team 4 Internship Project</label>
                     </div>
                 </div>
             </div>
