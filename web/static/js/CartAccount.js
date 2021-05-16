@@ -36,7 +36,7 @@ function loadDataCart(){
                         <td class="item__title">
                             <a href="single-product.jsp?masp=${arr[i].masp}">${arr[i].tensp}</a>
                         </td>
-                        <td class="item__price">${fomatter.format(arr[i].thanhtien)}</td>
+                        <td class="item__price">${fomatter.format(arr[i].giagoc)}</td>
                         <td class="item__sale">${arr[i].giamgia}%</td>
                         <td class="item__tt">${fomatter.format(arr[i].giagoc - (arr[i].giagoc * arr[i].giamgia)/100)}</td>
                         <td class="item__qty">${arr[i].soluong}</td>
