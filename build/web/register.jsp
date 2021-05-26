@@ -146,7 +146,7 @@
                         'opacity': '1',
                         'visibility': 'visible'
                     });
-                    $(this).find('.message__img').css('color', '#ff0000');
+                    $(this).find('.message__img').css('color', 'var(--danger)');
                 }).delay(2000).fadeOut('slow/500/fast', function () {
                     $(this).remove();
                 });
@@ -170,7 +170,7 @@
                         'opacity': '1',
                         'visibility': 'visible'
                     });
-                    $(this).find('.message__img').css('color', '#ff0000');
+                    $(this).find('.message__img').css('color', 'var(--danger)');
                 }).delay(2000).fadeOut('slow/500/fast', function () {
                     $(this).remove();
                 });

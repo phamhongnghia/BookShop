@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import bookshop.model.Account.AccountConn;
+import static bookshop.model.Account.AccountConn.getConnection;
 
 /**
  *
@@ -20,7 +20,7 @@ public class FeedbackConn {
     public static List getFeedback(String masp){
         List<Feedback> list = new ArrayList<>();
         try {
-            Connection conn = AccountConn.getConnection();
+            Connection conn = getConnection();
             PreparedStatement ps = conn.prepareStatement("select * from feedback where masp = ?");
             ps.setString(1, masp);
             ResultSet rs = ps.executeQuery();
@@ -43,7 +43,7 @@ public class FeedbackConn {
     public static int postFeedback(Feedback fb){
         int status = 0;
         try {
-            Connection conn = AccountConn.getConnection();
+            Connection conn = getConnection();
             PreparedStatement ps = conn.prepareStatement("insert into feedback(tendangnhap, masp, hoten, hinhanh, noidung, ngaydang) values(?,?,?,?,?,NOW())");
             ps.setString(1, fb.getTendangnhap());
             ps.setInt(2, fb.getMasp());
@@ -61,7 +61,7 @@ public class FeedbackConn {
     public static int updateImage(Feedback fb){
         int status = 0;
         try {
-            Connection conn = AccountConn.getConnection();
+            Connection conn = getConnection();
             PreparedStatement ps = conn.prepareStatement("update feedback set hinhanh = ? where tendangnhap = ?");
             ps.setString(1, fb.getHinhanh());
             ps.setString(2, fb.getTendangnhap());

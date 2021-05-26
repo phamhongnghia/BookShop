@@ -132,6 +132,10 @@
         <servlet-name>SellingProduct</servlet-name>
         <servlet-class>bookshop.controller.BookShop.SellingProduct</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetImage</servlet-name>
+        <servlet-class>bookshop.controller.Account.GetImage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServ</servlet-name>
         <url-pattern>/LoginServ</url-pattern>
@@ -263,6 +267,10 @@
     <servlet-mapping>
         <servlet-name>SellingProduct</servlet-name>
         <url-pattern>/SellingProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetImage</servlet-name>
+        <url-pattern>/GetImage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

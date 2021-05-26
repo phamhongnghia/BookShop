@@ -5,9 +5,9 @@
  */
 package bookshop.model.RegisterEmail;
 
+import static bookshop.model.Account.AccountConn.getConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import bookshop.model.Account.AccountConn;
 
 /**
  *
@@ -17,7 +17,7 @@ public class registerEmailConn {
     public static int insertEmail(String email){
         int status = 0;
         try {
-            Connection conn = AccountConn.getConnection();
+            Connection conn = getConnection();
             PreparedStatement ps = conn.prepareStatement("insert into dangkyemail(email) values(?)");
             
             ps.setString(1, email);

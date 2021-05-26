@@ -23,7 +23,7 @@
                 'opacity': '1',
                 'visibility': 'visible'
             });
-            $(this).find('.message__img').css('color', '#00ff2b');
+            $(this).find('.message__img').css('color', 'var(--green)');
         }).delay(2000).fadeOut('slow/500/fast', function () {
             $('.alert__cart').removeAttr('style');
             $(this).remove();

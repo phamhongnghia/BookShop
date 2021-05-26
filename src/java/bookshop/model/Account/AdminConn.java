@@ -5,12 +5,12 @@
  */
 package bookshop.model.Account;
 
+import static bookshop.model.Account.AccountConn.getConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import static bookshop.model.Account.AccountConn.getConnection;
 import bookshop.model.OrderProduct.OrderProduct;
 import bookshop.model.Product.Product;
 import bookshop.model.Product.ProductConn;
@@ -20,7 +20,6 @@ import bookshop.model.Product.ProductConn;
  * @author Pham Hong Nghia
  */
 public class AdminConn {
-    
     // All product
     public static List getAllProduct(){
         List<Product> list = new ArrayList<>();

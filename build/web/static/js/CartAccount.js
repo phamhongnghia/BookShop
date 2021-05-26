@@ -68,7 +68,7 @@ function deleteCartDetails(id, tendangnhap) {
                 'opacity': '1',
                 'visibility': 'visible'
             });
-            $(this).find('.message__img').css('color', '#00ff2b');
+            $(this).find('.message__img').css('color', 'var(--green)');
         }).delay(2000).fadeOut('slow/400/fast', function () {
             $(this).remove();
         });
@@ -183,7 +183,7 @@ function orderCart(tendangnhap){
             'opacity': '1',
             'visibility': 'visible'
         });
-        $(this).find('.message__img').css('color', '#00ff2b');
+        $(this).find('.message__img').css('color', 'var(--green)');
     }).delay(2000).fadeOut('slow/10000', function () {
         $('.alert__cart').removeAttr('style');
         $(this).remove();

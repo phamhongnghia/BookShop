@@ -18,7 +18,7 @@ import java.util.List;
  * @author Pham Hong Nghia
  */
 public class ProductConn {
-
+    
     public static Connection getConnection() {
         Connection conn = null;
         try {
@@ -49,6 +49,16 @@ public class ProductConn {
         }
         return status;
     }
+    
+    // Update product
+    public static int updateProduct(Product pr){
+        int status = 0;
+        try {
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
 
     // Insert detail product
     public static int insertDetailProduct(SingleProduct sp) {
@@ -73,6 +83,17 @@ public class ProductConn {
             ps.setInt(11, sp.getSotrang());
 
             status = ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+    
+    // Update product detail
+    public static int updateProductDetail(SingleProduct sp){
+        int status = 0;
+        try {
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -5,23 +5,22 @@
  */
 package bookshop.model.TypeBook;
 
+import static bookshop.model.Product.ProductConn.getConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import bookshop.model.Product.ProductConn;
 
 /**
  *
  * @author Pham Hong Nghia
  */
 public class TypeBookConn {
-    
     public static List listType(){
         List<TypeBook> list = new ArrayList<>();
         try {
-            Connection conn = ProductConn.getConnection();
+            Connection conn = getConnection();
             PreparedStatement ps = conn.prepareStatement("select * from loaisanpham");
             
             ResultSet rs = ps.executeQuery();

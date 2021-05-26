@@ -53,7 +53,10 @@ function loadData() {
         }
         $('.list__sale').slick({
             slidesToShow: 4,
-            infinite: false
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToScroll: 1
         });
     }).fail(function (response) {
         alert("Lỗi load dữ liệu");
@@ -379,7 +382,10 @@ function sellingProduct() {
         });
         $('.ads__selling').slick({
             slidesToShow: 1,
-            infinite: false
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToScroll: 1
         });
     }).fail(function (response) {
         console.log(response);

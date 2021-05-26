@@ -18,6 +18,8 @@ import bookshop.model.OrderProduct.OrderProduct;
  * @author Pham Hong Nghia
  */
 public class AccountConn {
+
+    
     public static Connection getConnection(){
         
         Connection conn = null;
@@ -222,6 +224,24 @@ public class AccountConn {
             e.printStackTrace();
         }
         return status;
+    }
+    
+    // Get new image
+    public static String getImage(String tendangnhap){
+        String hinhanh = null;
+        try {
+            Connection conn = getConnection();
+            PreparedStatement ps = conn.prepareStatement("select hinhanh from khachhang where tendangnhap = ?");
+            ps.setString(1, tendangnhap);
+            
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                hinhanh = rs.getString("hinhanh");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return hinhanh;
     }
     
     // Update password

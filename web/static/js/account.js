@@ -11,7 +11,7 @@ $(document).ready(function () {
     $('.sub__changepass').css('cursor', 'not-allowed');
     loadTab();
     updateImg();
-    
+
     //Pagination
     var rowsShown = 5;
     var rowsTotal = $('.account__bill tbody tr').length;
@@ -82,6 +82,7 @@ function tabAcc(obj) {
     $('.account__tab ' + url).addClass('account__active');
 }
 function updateImg() {
+    loadImage();
     var url = window.location.href.split("&status=");
     if (url.length > 0 && url[1] != null) {
         if (url[1] == 1) {
@@ -105,7 +106,7 @@ function updateImg() {
                     'opacity': '1',
                     'visibility': 'visible'
                 });
-                $(this).find('.message__img').css('color', 'red');
+                $(this).find('.message__img').css('color', 'var(--danger)');
             }).delay(5000).fadeOut('slow/10000', function () {
                 $('.alert__cart').removeAttr('style');
                 $(this).remove();
@@ -259,10 +260,21 @@ function loadDetailBill(obj) {
                     'opacity': '1',
                     'visibility': 'visible'
                 });
-                $(this).find('.message__img').css('color', '#00ff2b');
+                $(this).find('.message__img').css('color', 'var(--green)');
             }).delay(2000).fadeOut('slow/400/fast', function () {
                 $(this).remove();
             });
         });
+    });
+}
+function loadImage() {
+    let tendangnhap = document.querySelector('.my__account').getAttribute('data-user');
+    $.ajax({
+        url: "GetImage?tendangnhap=" + tendangnhap,
+        method: "GET"
+    }).done(function (response) {
+        document.querySelector('.my__account').setAttribute('data-img', response);
+    }).fail(function (response) {
+        console.log(response);
     });
 }

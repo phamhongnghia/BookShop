@@ -48,7 +48,7 @@
         <div class="admin">
             <div class="col-admin-3">
                 <div class="admin__menu">
-                    <div class="admin__title py-3">
+                    <div class="admin__title py-2">
                         <h5>Book<span>Shop</span></h5>
                     </div>
                     <div class="admin__avt pt-3">
@@ -102,6 +102,7 @@
                     <div class="content__admin">
                         <i class="fas fa-shield-alt mr-2"></i>
                         <span><%=tendangnhap%></span>
+<!--                        <i class="fa fa-cog" aria-hidden="true"></i>-->
                     </div>	
                 </div>
                 <div class="admin__item admin__home py-4" id="home">

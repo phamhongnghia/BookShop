@@ -5,10 +5,10 @@
  */
 package bookshop.model.Cart;
 
+import static bookshop.model.Product.ProductConn.getConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import static bookshop.model.Product.ProductConn.getConnection;
 
 
 /**
