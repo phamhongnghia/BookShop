@@ -194,7 +194,7 @@
 
         <!-- Dialog delete -->
         <div class="container">
-            <button class="btn btn-danger btn-click rounded-0">Xóa</button>
+<!--            <button class="btn btn-danger btn-click rounded-0">Xóa</button>-->
         </div>
 
         <div class="modal__delete">
