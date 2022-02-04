@@ -69,7 +69,7 @@ public class LoginServ extends HttpServlet {
                         session.setAttribute("diachi", acc.getDiachi());
 
                         session.setAttribute("error", "true");
-                        response.sendRedirect("");
+                        response.sendRedirect("/");
 //                        RequestDispatcher ds = getServletContext().getRequestDispatcher("/index.jsp");
 //                        ds.forward(request, response);
                     }

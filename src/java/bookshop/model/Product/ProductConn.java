@@ -23,7 +23,7 @@ public class ProductConn {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookshop", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookshop", "myroot", "12345678");
         } catch (Exception e) {
             System.out.println(e);
         }
