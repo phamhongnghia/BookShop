@@ -20,7 +20,7 @@
         </div>
         <div class="col-sm-6 header__menu">
             <ul>
-                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/BookShop">Trang chủ</a></li>
                 <li>
                     <a href="#">Tủ Sách</a>
                     <div class="menu__dropdown menu_1 row">

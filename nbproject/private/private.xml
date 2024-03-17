@@ -3,19 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/AddCart/CartProductConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/controller/BookShop/LoginServ.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/Product/ProductConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/controller/BookShop/LogoutServ.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/TypeBook/TypeBookConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/OrderProduct/OrderProductConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/Single/SingleProductConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/Account/AccountConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/web/loginbs.jsp</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/RegisterEmail/registerEmailConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/Cart/ProductCartConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/Feedback/FeedbackConn.java</file>
-            <file>file:/D:/FinalYear2021/DoAnThucTap/main/BookShop/src/java/bookshop/model/Account/Account.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/build-impl.xml~</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/src/java/bookshop/model/Account/Account.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/project.xml</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/build.xml</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/src/java/bookshop/model/Account/AccountConn.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/src/java/bookshop/model/Product/ProductConn.java</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/ant-deploy.xml</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/build-impl.xml</file>
         </group>
     </open-files>
 </project-private>
