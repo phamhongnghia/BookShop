@@ -23,7 +23,7 @@ function loadSearch(n) {
             arr.push(item);
         });
         for (let i of arr) {
-            if (i.tensp.toLowerCase().includes(keyword)) {
+            if (i.tensp.toLowerCase().includes(keyword.toLowerCase())) {
                 result.push(i);
             }
         }
