@@ -37,7 +37,7 @@ public class LogoutServ extends HttpServlet {
             HttpSession session = request.getSession();
             
             session.invalidate();
-            response.sendRedirect("/");
+            response.sendRedirect("/BookShop");
 //            RequestDispatcher ds =  getServletContext().getRequestDispatcher("/index.jsp");
 //            ds.forward(request, response);
         } finally {

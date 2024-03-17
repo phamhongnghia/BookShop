@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/build-impl.xml~</file>
-            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/src/java/bookshop/model/Account/Account.java</file>
-            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/project.xml</file>
-            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/build.xml</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/.gitignore</file>
             <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/src/java/bookshop/model/Account/AccountConn.java</file>
             <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/src/java/bookshop/model/Product/ProductConn.java</file>
-            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/ant-deploy.xml</file>
-            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Administrator/Desktop/EmployeeManager/bookshop/bookshop/web/loginAdmin.jsp</file>
         </group>
     </open-files>
 </project-private>
